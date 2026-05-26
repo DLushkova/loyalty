@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clubloyalty.client.controller.RegisterController"
+      alignment="CENTER" spacing="15" prefWidth="450" prefHeight="600"
+      style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e);">
+
+    <Text text="РЕГИСТРАЦИЯ" fill="#eaeaea"
+          style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 20;"/>
+
+    <TextField fx:id="loginField" promptText="Логин" prefWidth="350"
+               style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="passwordField" promptText="Пароль" prefWidth="350"
+                   style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="confirmPasswordField" promptText="Подтверждение пароля" prefWidth="350"
+                   style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <TextField fx:id="fullNameField" promptText="Фамилия и имя" prefWidth="350"
+               style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <TextField fx:id="phoneField" promptText="Телефон" prefWidth="350"
+               style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <TextField fx:id="emailField" promptText="Email" prefWidth="350"
+               style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <DatePicker fx:id="birthDatePicker" promptText="Дата рождения" prefWidth="350"
+                style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-background-radius: 10;"/>
+
+    <Button text="ЗАРЕГИСТРИРОВАТЬСЯ" onAction="#handleRegister"
+            style="-fx-background-color: #533483; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+
+    <Button text="НАЗАД" onAction="#handleBack"
+            style="-fx-background-color: transparent; -fx-text-fill: #0f3460; -fx-underline: true;"/>
+
+    <Text fx:id="errorLabel" fill="#e94560" visible="false"/>
+
+</VBox>

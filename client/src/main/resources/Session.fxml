@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clubloyalty.client.controller.SessionController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e); -fx-padding: 20;">
+
+    <Text text=" НАЧАТЬ ИГРУ" fill="#eaeaea" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Выбор тарифа -->
+    <VBox spacing="5" alignment="CENTER">
+        <Text text="Выберите тариф" fill="#666" style="-fx-font-size: 12px;"/>
+        <ComboBox fx:id="tariffCombo" promptText="Тариф" prefWidth="300"
+                  style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-background-radius: 10;"/>
+    </VBox>
+
+    <!-- Количество часов -->
+    <HBox spacing="10" alignment="CENTER">
+        <Text text="Количество часов:" fill="#eaeaea" style="-fx-font-size: 14px;"/>
+        <Spinner fx:id="hoursSpinner" prefWidth="80" editable="true"
+                 style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-background-radius: 10;"/>
+    </HBox>
+
+    <Separator style="-fx-background-color: #0f3460;"/>
+
+    <!-- Способ оплаты -->
+    <Text text=" СПОСОБ ОПЛАТЫ" fill="#eaeaea" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="30" alignment="CENTER">
+        <RadioButton fx:id="payMoneyBtn" text="Деньги"
+                     style="-fx-text-fill: #eaeaea;"/>
+        <RadioButton fx:id="payBonusBtn" text="Бонусы (до 50%)"
+                     style="-fx-text-fill: #eaeaea;"/>
+    </HBox>
+
+    <Separator style="-fx-background-color: #0f3460;"/>
+
+    <!-- Итоговая информация -->
+    <VBox spacing="5" alignment="CENTER">
+        <Text text=" ИТОГО К ОПЛАТЕ:" fill="#666" style="-fx-font-size: 12px;"/>
+        <Text fx:id="totalCostText" text="0 руб" fill="#e94560" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    </VBox>
+
+    <VBox spacing="5" alignment="CENTER">
+        <Text text=" НАЧИСЛИТСЯ БОНУСОВ:" fill="#666" style="-fx-font-size: 12px;"/>
+        <Text fx:id="bonusToEarnText" text="0" fill="#e94560" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    </VBox>
+
+    <Text fx:id="promotionInfoText" fill="#0f3460" style="-fx-font-size: 12px; -fx-padding: 5;"/>
+
+    <Label fx:id="errorLabel" textFill="red" wrapText="true" alignment="CENTER" maxWidth="400"/>
+
+    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text=" НАЧАТЬ СЕССИЮ" onAction="#handleStartSession"
+                style="-fx-background-color: #533483; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 25;"/>
+        <Button text=" ОТМЕНА" onAction="#handleCancel"
+                style="-fx-background-color: transparent; -fx-text-fill: #e94560; -fx-underline: true;"/>
+    </HBox>
+
+</VBox>

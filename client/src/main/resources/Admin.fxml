@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.clubloyalty.client.controller.AdminMainController"
+            style="-fx-background-color: #1a1a2e;">
+
+    <!-- Верхняя панель -->
+    <top>
+        <HBox style="-fx-background-color: #16213e; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+            <Text text=" ComputerClubLoyalty" fill="#eaeaea" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Text fx:id="userNameLabel" text="Администратор" fill="#e94560" style="-fx-font-size: 14px;"/>
+        </HBox>
+    </top>
+
+    <!-- Левое боковое меню -->
+    <left>
+        <VBox spacing="5" style="-fx-background-color: #0f3460; -fx-padding: 20;" prefWidth="200">
+            <Text text="МЕНЮ" fill="#666" style="-fx-font-size: 12px;"/>
+            <Separator style="-fx-background-color: #1a1a2e;"/>
+
+            <Button text=" Пользователи" onAction="#handleShowUsers"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+            <Button text=" Регистрация" onAction="#handleShowRegister"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+            <Button text=" Тарифы" onAction="#handleShowTariffs"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+            <Button text=" Акции" onAction="#handleShowPromotions"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+            <Button text=" Бонусы" onAction="#handleShowBonuses"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+            <Button text=" Отчёты" onAction="#handleShowReports"
+                    style="-fx-background-color: transparent; -fx-text-fill: #eaeaea; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+
+            <Separator style="-fx-background-color: #1a1a2e;"/>
+            <Button text=" Выход" onAction="#handleLogout"
+                    style="-fx-background-color: transparent; -fx-text-fill: #e94560; -fx-alignment: CENTER_LEFT; -fx-padding: 10;"/>
+        </VBox>
+    </left>
+
+    <!-- Центральная область (содержимое меняется) -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;"/>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.clubloyalty.client.controller.MainController"
+            style="-fx-background-color: #1a1a2e;">
+
+    <top>
+        <HBox style="-fx-background-color: #16213e; -fx-padding: 12;" spacing="20" alignment="CENTER_LEFT">
+            <Text text="ComputerClubLoyalty" fill="#ffffff" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Text fx:id="welcomeLabel" text="Добро пожаловать" fill="#ffffff" style="-fx-font-size: 14px;"/>
+            <Button fx:id="logoutBtn" text="Выход" onAction="#handleLogout"
+                    style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-padding: 5 15; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+
+            <!-- ГЛАВНАЯ -->
+            <Tab fx:id="mainTab" text="ГЛАВНАЯ" closable="false">
+                <VBox spacing="15" style="-fx-padding: 20;" alignment="TOP_CENTER">
+
+                    <Text text="БОНУСНЫЙ БАЛАНС" fill="#cccccc" style="-fx-font-size: 12px;"/>
+                    <Text fx:id="bonusBalanceText" text="0 ₽" fill="#e94560"
+                          style="-fx-font-size: 36px; -fx-font-weight: bold;"/>
+
+                    <Text text="ДЕНЕЖНЫЙ БАЛАНС" fill="#cccccc" style="-fx-font-size: 12px;"/>
+                    <Text fx:id="moneyBalanceText" text="0 ₽" fill="#ffffff"
+                          style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+                    <Separator style="-fx-background-color: #333;"/>
+
+                    <Text text="СТАТУС ЛОЯЛЬНОСТИ" fill="#cccccc" style="-fx-font-size: 12px;"/>
+                    <Text fx:id="statusText" text="Новичок" fill="#e94560"
+                          style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+                    <HBox spacing="30" alignment="CENTER">
+                        <Text fx:id="discountText" text="Скидка 0%" fill="#ffffff" style="-fx-font-size: 13px;"/>
+                        <Text fx:id="bonusMultiplierText" text="Бонус x1.0" fill="#ffffff" style="-fx-font-size: 13px;"/>
+                    </HBox>
+
+                    <Separator style="-fx-background-color: #333;"/>
+
+                    <Text text="ПРОГРЕСС" fill="#cccccc" style="-fx-font-size: 11px;"/>
+                    <ProgressBar fx:id="progressBar" prefWidth="280" progress="0"
+                                 style="-fx-accent: #e94560; -fx-background-radius: 10;"/>
+                    <Text fx:id="nextStatusText" fill="#cccccc" style="-fx-font-size: 11px;"/>
+
+                    <Separator style="-fx-background-color: #333;"/>
+
+                    <Text fx:id="remainingTimeText" fill="#e94560" style="-fx-font-size: 13px;" text="Нет активной сессии"/>
+
+                    <!-- КНОПКИ ДЕЙСТВИЙ -->
+                    <HBox spacing="15" alignment="CENTER" fx:id="actionButtons">
+                        <Button text="▶ НАЧАТЬ ИГРУ" onAction="#handleStartGame"
+                                style="-fx-background-color: #533483; -fx-text-fill: white; -fx-padding: 8 20; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <Button text="⏹ ЗАВЕРШИТЬ СЕССИЮ" onAction="#handleEndSession"
+                                style="-fx-background-color: #ff8c00; -fx-text-fill: white; -fx-padding: 8 20; -fx-font-size: 13px; -fx-font-weight: bold;"/>
+                        <Button text="🔄 ОБНОВИТЬ" onAction="#refreshAllData"
+                                style="-fx-background-color: #0f3460; -fx-text-fill: white; -fx-padding: 8 20; -fx-font-size: 13px;"/>
+                    </HBox>
+
+                    <Button fx:id="adminPanelBtn" text="АДМИН ПАНЕЛЬ" onAction="#handleAdminPanel"
+                            style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-padding: 8 25; -fx-font-size: 13px; -fx-font-weight: bold;"
+                            visible="false"/>
+
+                </VBox>
+            </Tab>
+
+            <!-- ТАРИФЫ -->
+            <Tab text="ТАРИФЫ" closable="false">
+                <VBox spacing="10" style="-fx-padding: 15;">
+                    <TableView fx:id="tariffsTable" prefHeight="400" VBox.vgrow="ALWAYS"
+                               style="-fx-background-color: #1a1a2e; -fx-text-fill: #ffffff;">
+                        <columns>
+                            <TableColumn fx:id="colTariffId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colTariffName" text="Название" prefWidth="200"/>
+                            <TableColumn fx:id="colTariffPrice" text="Цена/час" prefWidth="100"/>
+                            <TableColumn fx:id="colTariffBonus" text="Бонусы/час" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- АКЦИИ -->
+            <Tab text="АКЦИИ" closable="false">
+                <VBox spacing="10" style="-fx-padding: 15;">
+                    <TableView fx:id="promotionsTable" prefHeight="400" VBox.vgrow="ALWAYS"
+                               style="-fx-background-color: #1a1a2e; -fx-text-fill: #ffffff;">
+                        <columns>
+                            <TableColumn fx:id="colPromoId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colPromoName" text="Название" prefWidth="200"/>
+                            <TableColumn fx:id="colPromoMultiplier" text="Бонус x" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- ИСТОРИЯ (отдельная вкладка) -->
+            <Tab text="ИСТОРИЯ" closable="false">
+                <VBox spacing="10" style="-fx-padding: 15;">
+                    <TableView fx:id="sessionsTable" prefHeight="400" VBox.vgrow="ALWAYS"
+                               style="-fx-background-color: #1a1a2e; -fx-text-fill: #ffffff;">
+                        <columns>
+                            <TableColumn text="Дата" prefWidth="150"/>
+                            <TableColumn text="Тариф" prefWidth="120"/>
+                            <TableColumn text="Стоимость" prefWidth="100"/>
+                            <TableColumn text="Бонусы" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- ВХОД (для гостя) -->
+            <Tab fx:id="loginTab" text="ВХОД" closable="false">
+                <VBox spacing="20" style="-fx-padding: 50;" alignment="CENTER">
+                    <Button text="ВОЙТИ" onAction="#handleLogin"
+                            style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 40; -fx-font-weight: bold;"/>
+                    <Button text="РЕГИСТРАЦИЯ" onAction="#handleRegister"
+                            style="-fx-background-color: #333; -fx-text-fill: #ffffff; -fx-font-size: 16px; -fx-padding: 10 40;"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>
+

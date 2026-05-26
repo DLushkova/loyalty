@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clubloyalty.client.controller.AdminPromotionsController"
+      spacing="15" style="-fx-padding: 20;">
+
+    <Label text=" УПРАВЛЕНИЕ АКЦИЯМИ"
+           style="-fx-text-fill: #eaeaea; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Поиск -->
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Поиск по названию" HBox.hgrow="ALWAYS"/>
+        <Button text=" НАЙТИ" onAction="#handleSearch"/>
+    </HBox>
+
+    <!-- Таблица акций -->
+    <TableView fx:id="promotionsTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="colPromoId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colPromoName" text="Название" prefWidth="200"/>
+            <TableColumn fx:id="colPromoMultiplier" text="Бонус x" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Панель для добавления -->
+    <HBox spacing="10">
+        <TextField fx:id="promoNameField" promptText="Название" prefWidth="200"/>
+        <TextField fx:id="promoMultiplierField" promptText="Множитель" prefWidth="100"/>
+        <DatePicker fx:id="promoStartDate" promptText="С даты" prefWidth="120"/>
+        <DatePicker fx:id="promoEndDate" promptText="По дату" prefWidth="120"/>
+        <Button text=" ДОБАВИТЬ" onAction="#handleAddPromotion"
+                style="-fx-background-color: #533483; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Кнопки для редактирования и удаления -->
+    <HBox spacing="10">
+        <Button text=" РЕДАКТИРОВАТЬ" onAction="#handleEditPromotion"
+                style="-fx-background-color: #0f3460; -fx-text-fill: white;"/>
+        <Button text=" УДАЛИТЬ" onAction="#handleDeletePromotion"
+                style="-fx-background-color: #e94560; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Label fx:id="messageLabel" textFill="red"/>
+
+</VBox>

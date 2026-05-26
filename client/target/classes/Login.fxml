@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clubloyalty.client.controller.LoginController"
+      alignment="CENTER" spacing="20" prefWidth="400" prefHeight="400"
+      style="-fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e);">
+
+    <Text text="КОМПЬЮТЕРНЫЙ КЛУБ" fill="#eaeaea"
+          style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Text text="Система лояльности" fill="#0f3460" style="-fx-font-size: 14px;"/>
+
+    <TextField fx:id="loginField" promptText="Логин" maxWidth="300"
+               style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="passwordField" promptText="Пароль" maxWidth="300"
+                   style="-fx-background-color: #0f3460; -fx-text-fill: #eaeaea; -fx-prompt-text-fill: #666; -fx-background-radius: 10; -fx-padding: 10;"/>
+
+    <Button fx:id="loginBtn" text="ВОЙТИ" maxWidth="300"
+            style="-fx-background-color: #533483; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10;"
+            onAction="#handleLogin"/>
+
+    <Button fx:id="guestBtn" text="ВОЙТИ КАК ГОСТЬ" maxWidth="300"
+            style="-fx-background-color: #0f3460; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10;"
+            onAction="#handleGuestLogin"/>
+
+    <Button fx:id="registerBtn" text="Регистрация"
+            style="-fx-background-color: transparent; -fx-text-fill: #0f3460; -fx-underline: true;"
+            onAction="#handleRegister"/>
+
+    <Text fx:id="errorLabel" fill="#e94560" style="-fx-font-size: 12px;" visible="false"/>
+
+</VBox>

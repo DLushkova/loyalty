@@ -1,0 +1,16 @@
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\ClientHandler.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\dao\ClientProfileDAO.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\dao\DatabaseConnection.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\dao\GameSessionDAO.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\dao\TariffDAO.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\dao\UserDAO.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\factory\ServiceFactory.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\interfaces\ServiceInterface.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\model\BaseEntity.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\model\ClientProfile.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\model\GameSession.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\model\Tariff.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\model\User.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\Server.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\service\AuthService.java
+C:\Users\cdmar\IdeaProjects\ComputerClubLoyalty\server\src\main\java\com\clubloyalty\server\service\LoyaltyService.java

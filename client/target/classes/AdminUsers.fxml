@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.clubloyalty.client.controller.AdminUsersController"
+      spacing="15" style="-fx-padding: 20;">
+
+    <!-- Поиск -->
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Поиск по логину или имени" HBox.hgrow="ALWAYS"/>
+        <Button text=" НАЙТИ" onAction="#handleSearchUsers"/>
+    </HBox>
+
+    <!-- Таблица пользователей -->
+    <TableView fx:id="usersTable" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="colUserId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colLogin" text="Логин" prefWidth="150"/>
+            <TableColumn fx:id="colFullName" text="ФИО" prefWidth="200"/>
+            <TableColumn fx:id="colRoleId" text="Роль" prefWidth="80"/>
+            <TableColumn fx:id="colBlocked" text="Заблокирован" prefWidth="100"/>
+            <TableColumn fx:id="colStatus" text="Статус" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Кнопки действий -->
+    <HBox spacing="10">
+        <Button text=" БЛОКИРОВАТЬ" onAction="#handleBlockUser"/>
+        <Button text=" РАЗБЛОКИРОВАТЬ" onAction="#handleUnblockUser"/>
+        <Button text="️ РЕДАКТИРОВАТЬ" onAction="#handleEditUser"/>
+        <Button text=" УДАЛИТЬ" onAction="#handleDeleteUser"/>
+        <Button text=" ИЗМЕНИТЬ СТАТУС" onAction="#handleChangeStatus"
+                style="-fx-background-color: #ff8c00; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,7 @@
+com\clubloyalty\common\network\ActionType.class
+com\clubloyalty\common\network\Request.class
+com\clubloyalty\common\dto\TariffDTO.class
+com\clubloyalty\common\dto\PromotionDTO.class
+com\clubloyalty\common\dto\SessionDTO.class
+com\clubloyalty\common\dto\UserDTO.class
+com\clubloyalty\common\network\Response.class
